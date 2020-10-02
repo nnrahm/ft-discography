@@ -1,0 +1,5 @@
+body {
+    background: url('/assets/images/grid4.png') center bottom repeat-x, url('/assets/images/stars.png') top left repeat;
+    background-color: #000;
+    background-size: contain, 275px;
+}
