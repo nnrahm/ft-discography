@@ -1,5 +1,521 @@
+
+@font-face {
+    font-family: 'Gontserrat';
+    src: url('/ft-discography/assets/fonts/gontserrat-bold.ttf');
+}
+
+@font-face {
+    font-family: 'Evil Dead';
+    src: url('/ft-discography/assets/fonts/evil-dead.ttf')
+}
+
+:root {
+    --heading-font: 'Gontserrat', sans-serif;
+    --title-font: 'Evil Dead', sans-serif;
+    --main-font: 'Courier New', serif;
+    --main-textcolor: #FFF;
+    --secondary-textcolor: #ffc90d;
+    --links-color: #dc2e31;
+    --accent-color: #8768a8;
+    --bg-color: rgba(0, 0, 0, .5);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
-    background: url('/assets/images/grid4.png') center bottom repeat-x, url('/assets/images/stars.png') top left repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('../images/stars.png') top left repeat;
     background-color: #000;
-    background-size: contain, 275px;
+    background-size: 500px;
+    font: 20px var(--main-font);
+    font-weight: 600;
+}
+
+main {
+    margin: 0 100px 0;
+}
+
+header {
+    position: relative;
+    background-color: #ffffef;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 55px;
+    width: 100%;
+    left: 0;
+    background: url('../images/tornpaper.svg') bottom;
+    background-size: 100%;
+}
+
+p, li {
+    color: var(--main-textcolor);
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--secondary-textcolor);
+    clear: both;
+}
+
+h1 {
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--secondary-textcolor);
+    padding: 50px 0px 0px;
+}
+
+h1:after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    content: " ";
+    text-shadow: none;
+    background-color: var(--links-color);
+    width: 100%;
+    z-index: -1;
+}
+
+h3 {
+    color: #243367;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.members h3 {
+    background-color: transparent;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 40px #fff;
+    color: var(--links-color);
+    -webkit-text-stroke: .06em var(--accent-color);
+    margin-top: 0;
+}
+
+em {
+    color: var(--secondary-textcolor);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-shadow: 0px 0px 8px #5f5f5f;
+    color: var(--links-color);
+    transition: .15s ease-out;
+}
+
+.sources li {
+    margin: 30px 0px 50px 80px;
+}
+
+.nav {
+    list-style: none;
+    font: 700 2.5em var(--heading-font);
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.nav li {
+    float: left;
+    margin: 50px 0px 0px 80px;
+}
+
+.nav a {
+    padding: 5px;
+    color: #000; 
+    text-decoration: none;
+}
+
+.sources a {
+    padding: 5px;
+}
+
+.nav a:hover {
+    text-shadow: none;
+    color: var(--links-color);
+}
+
+#logo {
+    padding: 20px 0 0 40px;
+    float: left;
+    max-width: 100px;
+}
+
+/*----------------- FORM -----------------*/
+
+.form-container {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.inline-input label, .fullw-input label {
+    color: var(--secondary-textcolor);
+    display: block;
+    padding: 15px 0 0;
+}
+
+.inline-input {
+    float: left;
+    width: 45%;
+}
+
+.inline-input input {
+    padding: 10px;
+    width: 100%;
+}
+
+.inline-input:nth-child(1) {
+    margin-right: 50px;
+}
+
+.tri-input .inline-input:nth-child(1),
+.tri-input .inline-input:nth-child(2) {
+  margin-right: 25px;
+}
+
+.tri-input .inline-input {
+    float: left;
+    width: 30%;
+}
+
+.fullw-input input {
+    padding: 10px;
+    width: 100%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.req {
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    background-color: var(--links-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin: 30px 0px 0px;
+}
+
+/*----------------- HERO AND TITLE -----------------*/
+
+#home {
+    background-image: url('/ft-discography/assets/images/journey-hero.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 932px;
+/*    width: 100vw;*/
+}
+
+.hero-text {
+    padding: 415px 0px 0px;
+    text-align: center;
+    letter-spacing: 40px;
+}
+
+span {
+    position: relative;
+    font-size: 200px;
+    font-family: var(--title-font);
+    color: block;
+    -webkit-text-stroke: .016em #fff;
+    background: rgb(220,46,49);
+    background: linear-gradient(180deg, rgba(220,46,49,1) 40%, rgba(255,201,13,1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 0;
+}
+
+span::before {
+  content: attr(data-char);
+  position: absolute;
+  z-index: -1;
+  -webkit-text-stroke: .12em #243367; 
+}
+
+/*----------------- BAND MEMBER BIOS -----------------*/
+
+.members img {
+    width: 350px;
+    margin: 0px 20px;
+}
+
+.members p {
+    background-color: var(--bg-color);
+}
+
+.member-bio-left, .member-bio-right {
+    clear: both;
+    padding: 0 200px 200px;
+}
+
+.member-bio-left img {
+    float: left;
+}
+
+.member-bio-right img {
+    float: right;
+}
+
+.member-bio-right p {
+    text-align: right;
+}
+
+.member-bio-left p {
+    text-align: left;
+} 
+
+/*----------------- DISCOGRAPHY / ALBUMS -----------------*/
+
+#discography p {
+    background-color: var(--bg-color);
+    padding-top: 30px;
+    text-align: center;
+}
+
+.albums {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.disco-img {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.disco-img img {
+    height: 300px;
+    max-width: 300px;
+}
+
+.tracklist {
+    color: #dc2e31;
+    background-color: var(--bg-color);
+}
+
+footer {
+    font-size: .8em;
+    margin-top: 50px;
+    text-align: center;
+    background-color: #ffffef;
+    padding: 15px;
+}
+
+/*----------------- MEDIA QUERIES -----------------*/
+
+/*------ MOBILE -----*/
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    
+    main {
+        margin: 0 35px;
+    }
+    
+    h1 {
+        font-size: 3em;
+        padding-top: 20px;
+    }
+    
+    span {
+        font-size: 3.5em; 
+        letter-spacing: 2px;
+    }
+    
+    header::after {
+        height: 15px;
+    }
+    
+    #home {
+        background-size: cover;
+        height: 400px;
+    }
+    
+    .hero-text span {
+        top: -190px;
+    }
+    
+    #logo {
+        width: 70px;
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .nav {
+        text-align: center;
+        font-size: 1em;
+        clear: both;
+    }
+    
+    .nav li {
+    float: left;
+    margin: 20px 0px 30px 20px;
+    }
+    
+    #discography p {
+        padding: 0;
+    }
+    
+    .albums {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+    
+    p {
+        text-align: center;
+    }
+    
+    .members img {
+        width: 150px;
+    }
+    
+    .member-bio-left, .member-bio-right {
+        padding: 0;
+    }
+    
+    .form-container {
+        width: 360px;
+    }
+    
+    .inline-input:nth-child(1) {
+    margin-right: 35px;
+    }
+
+    .tri-input .inline-input:nth-child(1),
+    .tri-input .inline-input:nth-child(2) {
+      margin-right: 18px;
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 901px) {
+    body {
+        font-size: 14px;
+    }
+    
+    header::after {
+        height: 25px;
+    }
+    
+    #home {
+        background-size: cover;
+        height: 400px;
+    }
+    
+    main {
+        margin: 0 35px;
+    }
+    
+    .hero-text span {
+        top: -190px;
+    }
+    
+    span {
+        font-size: 5em;
+        letter-spacing: 5px;
+    }
+    
+    #logo {
+        width: 80px;
+        padding-left: 20px;
+    }
+    
+    .nav {
+        font-size: 1.5em;
+    }
+    
+    .nav li {
+        margin: 0 auto;
+        margin: 50px 0px 0px 10px;
+    }
+    
+    #discography p {
+        padding-top: 30px;
+    }
+    
+    .albums {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+    
+    .members img {
+        width: 200px;
+    }
+    
+    .member-bio-left, .member-bio-right {
+        padding: 0;
+    }
+    
+    .members h3 {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (min-width: 902px) and (max-width: 1365px) {
+    body {
+        font-size: 16px;
+    }
+    
+    span {
+        font-size: 7em;
+        letter-spacing: 10px;
+    }
+    
+    header::after {
+        height: 50px;
+    }
+    
+    #logo {
+        padding-right: 10px;
+    }
+    
+    .nav {
+        font-size: 1.8em;
+    }
+    
+    .nav li {
+        margin-left: 20px;
+    }
+    
+    .albums {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+    
+        .members img {
+        width: 220px;
+    }
+    
+    .member-bio-left, .member-bio-right {
+        padding: 0;
+    }
+    
+    .members h3 {
+        font-size: 2em;
+        margin-top: 20px;
+    }
 }
