@@ -154,7 +154,7 @@ a:hover {
     max-width: 100px;
 }
 
-/*----------------- FORM -----------------*/
+/*----------------- FORMS, BUTTONS -----------------*/
 
 .form-container {
     width: 500px;
@@ -184,12 +184,12 @@ a:hover {
 
 .tri-input .inline-input:nth-child(1),
 .tri-input .inline-input:nth-child(2) {
-  margin-right: 25px;
+  margin-right: 40px;
 }
 
 .tri-input .inline-input {
     float: left;
-    width: 30%;
+    width: 28%;
 }
 
 .fullw-input input {
@@ -205,15 +205,40 @@ a:hover {
     font-size: 1em;
 }
 
+a.topBtn {
+    box-shadow: none;
+    bottom: 1.5%;
+    font-size: 3em;
+    line-height: 62px;
+    position: fixed;
+    right: .6rem;
+    text-align: center;
+    text-decoration: none;
+    width: 65px;
+    z-index: 10;
+    margin: 10px 0 45px 0;
+    height: 60px;
+}
+
+a.topBtn::before, a.topBtn::after {
+    content: none;
+}
+
 input[type="submit"] {
-    background-color: var(--links-color);
-    color: white;
     font-weight: 600;
     text-transform: uppercase;
     border: none;
-    width: 100%;
+    width: 525px;
     padding: 10px;
     margin: 30px 0px 0px;
+}
+
+a.topBtn, input[type="submit"] {
+    color: var(--main-textcolor);
+    background: var(--links-color);
+    border: none;
+    border-bottom: 5px solid var(--secondary-textcolor);
+    border-radius: 10px;
 }
 
 /*----------------- HERO AND TITLE -----------------*/
@@ -237,7 +262,6 @@ span {
     position: relative;
     font-size: 200px;
     font-family: var(--title-font);
-    color: block;
     -webkit-text-stroke: .016em #fff;
     background: rgb(220,46,49);
     background: linear-gradient(180deg, rgba(220,46,49,1) 40%, rgba(255,201,13,1) 70%);
@@ -323,6 +347,8 @@ footer {
     padding: 15px;
 }
 
+
+
 /*----------------- MEDIA QUERIES -----------------*/
 
 /*------ MOBILE -----*/
@@ -398,17 +424,44 @@ footer {
     }
     
     .form-container {
-        width: 360px;
+        width: 280px;
+    }
+    
+    .inline-input input {
+        padding: 10px;
+        width: 255px;
+    }
+    
+    .tri-input .inline-input {
+        float: left;
+        width: 255px;
     }
     
     .inline-input:nth-child(1) {
-    margin-right: 35px;
+        margin-right: 35px;
     }
 
     .tri-input .inline-input:nth-child(1),
     .tri-input .inline-input:nth-child(2) {
-      margin-right: 18px;
+        margin-right: 28px;
     }
+    
+    input[type="submit"] {
+        width: 280px;
+    }
+    
+    .fullw-input input {
+        padding: 10px;
+        width: 255px;
+    }
+    
+    a.topBtn {
+        width: 50px;
+        margin: 10px 0 50px 0;
+        height: 50px;
+        opacity: .5;
+    }
+
 }
 
 
